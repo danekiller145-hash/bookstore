@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Book House</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <img src="images/logo.png" alt="logo">
+
+    </div>
+    <div class="header-center">
+    <nav class="nav" id="nav">
+
+        <a href="index.html">Главная</a>
+
+        <a href="catalog.html">Каталог</a>
+
+        <a href="#contacts">Контакты</a>
+
+    </nav>
+
+        <div class="search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Найти книгу">
+
+        </div>
+    </div>
+        <div class="header-right">
+
+        <button class="header-icon">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>Войти</span>
+        </button>
+
+        <button class="header-icon cart-btn"
+        id="cartOpen">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Корзина</span>
+        <span id="cartCount">0</span>
+
+        </button>
+
+        <button
+            class="burger"
+            id="burger">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- CART -->
+
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h2>Корзина</h2>
+        <button id="closeCart">×</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+        <button class="checkout-btn" id="checkoutBtn">Перейти к оплате →</button>
+        <button class="clear-cart" id="clearCart">Очистить корзину</button>
+    </div>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1><span>ДОБРО ПОЖАЛОВАТЬ В</span>
+        <span>КНИЖНЫЙ МАГАЗИН!</span></h1>
+
+        <p>
+
+            Ознакомьтесь с нашей обширной
+            коллекцией книг различных жанров.
+            Любите ли вы захватывающие
+            детективы, приключения,
+            фэнтези или романтику —
+            здесь найдётся книга для каждого.
+
+        </p>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+            src="images/hero.png"
+            alt="">
+
+    </div>
+
+</section>
+
+<div class="section-line"></div>
+<!-- NEW BOOKS -->
+
+<section
+    class="new-books"
+    id="new">
+
+    <h2>
+
+        Новинки
+
+    </h2>
+
+    <div class="products-layout">
+
+        <aside class="sidebar">
+
+            <h3>
+
+                Книги по жанрам
+
+            </h3>
+
+            <ul>
+
+                <li
+                    class="filter active"
+                    data-category="all">
+
+                    Все жанры
+
+                </li>
+
+                <li
+                    class="filter"
+                    data-category="adventure">
+
+                    Приключение
+
+                </li>
+
+                <li
+                    class="filter"
+                    data-category="horror">
+
+                    Ужасы
+
+                </li>
+
+                <li
+                    class="filter"
+                    data-category="detective">
+
+                    Детективы
+
+                </li>
+
+            </ul>
+
+            <div class="recommend-menu">
+
+                <h4>
+
+                    Рекомендации
+
+                </h4>
+
+                <p data-recommend="author-month" class="recommend-author">Автор месяца</p>
+                <p data-recommend="book-of-year" class="recommend-book-year">Книга года</p>
+                <p data-recommend="popular" class="recommend-popular">Популярные</p>
+                 <p class="reset-recommend">Сбросить фильтр</p>
+            </div>
+
+        </aside>
+
+        <div class="products">
+
+
+            <div
+                class="card"
+                data-category="adventure"
+                data-recommend="book-of-year"
+                data-id="1"
+                data-name="Throne Of Ice"
+                data-image="images/book1.jpg">
+
+                <img
+                    src="images/book1.jpg">
+
+                <div class="card-info">
+
+                    <h3>Throne Of Ice</h3>
+                      <span class="author">By Marion Blackwood</span>
+                       <div class="rating">★★★★★</div>
+                    <p>Вторая книга серии «Flame and Thorns».
+        Продолжение истории о борьбе против
+        тиранической династии.
+
+                    </p>
+
+                    <button class="buy-btn">
+
+                        Купить
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-category="adventure"
+                data-recommend="popular"
+                data-id="2"
+                data-name="Neverthorn"
+                data-image="images/book2.jpg">
+
+                <img
+                    src="images/book2.jpg">
+
+                <div class="card-info">
+
+                    <h3>
+
+                        Neverthorn
+
+                    </h3>
+                    <span class="author">
+                        By Shannon Mayer
+                    </span>
+                    <div class="rating">
+        ★★★★★
+    </div>
+                    <p>Это академия-фэнтези в жанре романтического фэнтези с элементами дарк-академии. 
+
+                    </p>
+
+                    <button class="buy-btn">
+
+                        Купить
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-category="horror"
+                data-recommend="author-month"
+                data-id="3"
+                data-name="Taste Of Torment"
+                data-image="images/book3.jpg">
+
+                <img
+                    src="images/book3.jpg">
+
+                <div class="card-info">
+
+                    <h3>
+
+                        Taste Of Torment
+
+                    </h3>
+                    <span class="author">
+                        By Stacey Trombley
+                    </span>
+                     <div class="rating">
+        ★★★★★
+    </div>
+                    <p>Третья книга серии Deep In Your Veins. Вампиры  готовятся стать Великой Высокой Парой, но им угрожают болезнь и недоброжелатели.
+
+                    </p>
+
+                    <button class="buy-btn">
+
+                        Купить
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-category="horror"
+                data-recommend="popular"
+                data-id="4"
+                data-name="Realm Of Fear"
+                data-image="images/book4.jpg">
+
+                <img
+                    src="images/book4.jpg">
+
+                <div class="card-info">
+
+                    <h3>
+
+                        Realm Of Fear
+
+                    </h3>
+                     <span class="author">
+                        By Miranda Joy
+                     </span>
+                     <div class="rating">
+        ★★★★★
+    </div>
+                    <p>Эмилия пытается очистить имя сестры и  раскрывает преступление, чтобы остановить конфликт между ведьмами и Террифайерами.
+
+                    </p>
+
+                    <button class="buy-btn">
+
+                        Купить
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div
+                class="card"
+                data-category="detective"
+                data-recommend="author-month"
+                data-id="5"
+                data-name="Queen Of Roses"
+                data-image="images/book5.jpg">
+
+                <img
+                    src="images/book5.jpg">
+
+                <div class="card-info">
+
+                    <h3>
+
+                        Queen Of Roses
+
+                    </h3>
+                    <span class="author">
+                        By  Briar Boleyn
+                    </span>
+                     <div class="rating">
+        ★★★★★
+    </div>
+                    <p>Моргана, полукровка  фейри,  отправляется на поиски Экскалибура.
+
+                    </p>
+
+                    <button class="buy-btn">
+
+                        Купить
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-category="detective"
+                data-recommend="book-of-year"
+                data-id="6"
+                data-name="Married To Pirate"
+                data-image="images/book6.jpg">
+
+                <img
+                    src="images/book6.jpg">
+
+                <div class="card-info">
+
+                    <h3>
+
+                        Married To Pirate
+
+                    </h3>
+                    <span class="author">
+                        By Athena rose
+                    </span>
+                      <div class="rating">
+        ★★★★★
+    </div>
+                    <p>Под чёрным флагом любовь пробивается сквозь шторм недоверия.
+
+                    </p>
+
+                    <button class="buy-btn">
+
+                        Купить
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<div class="section-line2"></div>
+
+
+<section class="categories">
+
+    <h2>
+
+        Рекомендуемые Категории
+
+    </h2>
+
+    <div class="category-block">
+
+        <div class="category-header">
+
+            <h3>Приключение</h3>
+
+            <a href="catalog.html?category=adventure"><button>Смотреть все →</button></a>
+
+        </div>
+        <p>Приключенческие книги перенесут вас в захватывающие места и совершат захватывающие подвиги, увлекая и вдохновляя читателей.</p>
+
+        <div class="books-row">
+
+            <img src="images/book7.jpg">
+            <img src="images/book8.jpg">
+            <img src="images/book9.jpg">
+            <img src="images/book10.jpg">
+            <img src="images/book11.jpg">
+
+        </div>
+
+    </div>
+
+    <div class="category-block">
+
+        <div class="category-header">
+
+            <h3>Ужасы</h3>
+
+            <a href="catalog.html?category=horror"><button>Смотреть все →</button></a>
+
+        </div>
+        <p>Книги ужасов наводят ужас своими захватывающими рассказами, заставляя вас почувствовать страх и неизвестность.</p>
+
+        <div class="books-row">
+
+            <img src="images/book12.jpg">
+            <img src="images/book13.jpg">
+            <img src="images/book14.jpg">
+            <img src="images/book15.jpg">
+            <img src="images/book16.jpg">
+
+        </div>
+
+    </div>
+
+    <div class="category-block">
+
+        <div class="category-header">
+
+            <h3>Детективы</h3>
+
+            <a href="catalog.html?category=detective"><button>Смотреть все →</button></a>
+
+        </div>
+        <p>Детективные книги - захватывающие сюжеты и загадочный детектив, заставляющий вас гадать до самого конца.</p>
+
+        <div class="books-row">
+
+            <img src="images/book17.jpg">
+            <img src="images/book18.jpg">
+            <img src="images/book19.jpg">
+            <img src="images/book20.jpg">
+            <img src="images/book21.jpg">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section
+    class="newsletter"
+    id="newsletter">
+
+    <h2>
+
+        Подпишитесь на нашу рассылку
+
+    </h2>
+
+    <p>
+
+        Получайте информацию
+        о новых книгах и скидках
+
+    </p>
+
+    <form>
+
+        <input
+            type="email"
+            placeholder="Введите адрес электронной почты">
+
+        <button>
+
+            Подписаться
+
+        </button>
+
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer
+    class="footer"
+    id="contacts">
+
+    <div>
+
+        <img
+            src="images/logo.png"
+            class="footer-logo">
+
+    </div>
+
+    <div>
+
+        <h4>
+
+            Интернет-магазин
+
+        </h4>
+
+        <p>Акции</p>
+        <p>Распродажа</p>
+        <p>Доставка</p>
+
+    </div>
+
+    <div>
+
+        <h4>
+
+            Знаем, что почитать
+
+        </h4>
+
+        <p>Новинки</p>
+        <p>Вопросы и ответы</p>
+
+    </div>
+
+    <div>
+
+        <h4>
+
+            Контакты
+
+        </h4>
+
+        <p>
+
+            info@bookhouse.com
+
+        </p>
+        <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
