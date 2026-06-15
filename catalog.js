@@ -8,7 +8,7 @@ const catalogBooks = [
         category: "adventure",
         rating: 5,
         description: "Вторая книга серии «Flame and Thorns». Продолжение истории о борьбе против тиранической династии.",
-        image: "images/book1.jpg",
+        image: "book1.jpg",
         date: "2024-01-15"
     },
     {
@@ -19,7 +19,7 @@ const catalogBooks = [
         category: "adventure",
         rating: 4,
         description: "Академия-фэнтези в жанре романтического фэнтези с элементами дарк-академии.",
-        image: "images/book2.jpg",
+        image: "book2.jpg",
         date: "2024-02-20"
     },
     {
@@ -30,7 +30,7 @@ const catalogBooks = [
         category: "horror",
         rating: 5,
         description: "Третья книга серии Deep In Your Veins. Вампиры готовятся стать Великой Высокой Парой.",
-        image: "images/book3.jpg",
+        image: "book3.jpg",
         date: "2024-01-10"
     },
     {
@@ -41,7 +41,7 @@ const catalogBooks = [
         category: "horror",
         rating: 4,
         description: "Эмилия пытается очистить имя сестры и раскрывает преступление.",
-        image: "images/book4.jpg",
+        image: "book4.jpg",
         date: "2024-03-05"
     },
     {
@@ -52,7 +52,7 @@ const catalogBooks = [
         category: "detective",
         rating: 5,
         description: "Моргана, полукровка фейри, отправляется на поиски Экскалибура.",
-        image: "images/book5.jpg",
+        image: "book5.jpg",
         date: "2024-02-28"
     },
     {
@@ -63,22 +63,22 @@ const catalogBooks = [
         category: "detective",
         rating: 4,
         description: "Под чёрным флагом любовь пробивается сквозь шторм недоверия.",
-        image: "images/book6.jpg",
+        image: "book6.jpg",
         date: "2024-03-10"
     }
 ];
 
-// ===== ПОЛУЧАЕМ КАТЕГОРИЮ ИЗ URL =====
+
 const urlParams = new URLSearchParams(window.location.search);
 const categoryFromUrl = urlParams.get('category');
 
-// Фильтруем книги если есть категория в URL
+
 let currentBooks = [...catalogBooks];
 if (categoryFromUrl) {
     currentBooks = catalogBooks.filter(book => book.category === categoryFromUrl);
 }
 
-// ===== ФУНКЦИЯ ОТРИСОВКИ КАРТОЧЕК =====
+
 function renderCatalog(books) {
     const container = document.getElementById("catalogProducts");
     if (!container) return;
@@ -109,7 +109,7 @@ function renderCatalog(books) {
         container.appendChild(card);
     });
     
-    // Добавляем обработчики для кнопок "Купить"
+    
     document.querySelectorAll(".buy-btn-catalog").forEach((btn, index) => {
         btn.addEventListener("click", () => {
             const book = books[index];
@@ -118,7 +118,7 @@ function renderCatalog(books) {
     });
 }
 
-// ===== ДОБАВЛЕНИЕ В КОРЗИНУ =====
+
 function addToCart(book) {
     let cart = JSON.parse(localStorage.getItem("bookCart")) || [];
     
@@ -139,14 +139,14 @@ function addToCart(book) {
     showToast("Книга добавлена");
 }
 
-// ===== ОБНОВЛЕНИЕ СЧЕТЧИКА КОРЗИНЫ =====
+
 function updateCartCounter() {
     const cart = JSON.parse(localStorage.getItem("bookCart")) || [];
     const cartCount = document.getElementById("cartCount");
     if (cartCount) cartCount.textContent = cart.length;
 }
 
-// ===== СОРТИРОВКА =====
+
 function sortBooks(books, sortType) {
     const sorted = [...books];
     
@@ -162,7 +162,7 @@ function sortBooks(books, sortType) {
     }
 }
 
-// ===== УВЕДОМЛЕНИЯ =====
+
 function showToast(message) {
     const toast = document.createElement("div");
     toast.className = "toast";
@@ -176,7 +176,7 @@ function showToast(message) {
     }, 2500);
 }
 
-// ===== ИНИЦИАЛИЗАЦИЯ =====
+
 renderCatalog(currentBooks);
 
 // ===== СОРТИРОВКА =====
@@ -188,7 +188,7 @@ if (sortSelect) {
     });
 }
 
-// ===== ПОИСК =====
+
 const searchInput = document.getElementById("searchInput");
 if (searchInput) {
     searchInput.addEventListener("keyup", () => {
@@ -209,7 +209,7 @@ if (searchInput) {
     });
 }
 
-// ===== КОРЗИНА (открытие/закрытие) =====
+
 const cartOpen = document.getElementById("cartOpen");
 const cartSidebar = document.getElementById("cartSidebar");
 const closeCart = document.getElementById("closeCart");
@@ -275,7 +275,7 @@ function renderCartSidebar() {
     });
 }
 
-// ===== ОЧИСТКА КОРЗИНЫ =====
+
 const clearCartBtn = document.getElementById("clearCart");
 if (clearCartBtn) {
     clearCartBtn.addEventListener("click", () => {
@@ -286,7 +286,7 @@ if (clearCartBtn) {
     });
 }
 
-// ===== ОПЛАТА =====
+
 const checkoutBtn = document.getElementById("checkoutBtn");
 if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
@@ -299,7 +299,7 @@ if (checkoutBtn) {
     });
 }
 
-// ===== БУРГЕР МЕНЮ =====
+
 const burger = document.getElementById("burger");
 const nav = document.getElementById("nav");
 
