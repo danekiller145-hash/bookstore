@@ -1109,26 +1109,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .hero {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-        position: static;
-    }
-
-    .hero-image {
-        position: static;
-        margin-top: 30px;
-    }
-
-    .hero-image img {
-        width: 80%;
-        margin: 0 auto;
-    }
-}
-
 @media (max-width: 576px) {
     .hero {
         padding: 50px 6%;
@@ -1152,5 +1132,63 @@ body {
     .card img {
         width: 100%;
         height: 260px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.4s;
+        z-index: 9999;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+    }
+    .nav.active {
+        right: 0;
+    }
+    .burger {
+        display: block;
+        z-index: 10000;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero-image {
+        display: none;
+    }
+    .hero {
+        padding: 40px 20px;
+        text-align: center;
+        min-height: auto;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+@media (max-width: 768px) {
+    .section-line, .section-line2 {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    .cart-sidebar.active {
+        right: 0;
     }
 }
